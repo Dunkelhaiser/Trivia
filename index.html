@@ -5,8 +5,48 @@
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <link rel="stylesheet" href="/src/css/main.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Init Project." />
+        <meta name="description" content="Simple quiz app" />
         <title>Trivia</title>
+        <script type="module" src="./src/quiz.ts" defer></script>
     </head>
-    <body></body>
+    <body>
+        <div class="container">
+            <div class="loader hidden">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="flex" id="quiz-content">
+                <p></p>
+                <span></span>
+                <select class="select">
+                    <option value="">Random</option>
+                    <option value="artliterature">Art and Literature</option>
+                    <option value="language">Language</option>
+                    <option value="sciencenature">Science and Nature</option>
+                    <option value="general">General</option>
+                    <option value="fooddrink">Food and Drinks</option>
+                    <option value="peopleplaces">Humanitarian</option>
+                    <option value="geography">Geography</option>
+                    <option value="historyholidays">History</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="toysgames">Games</option>
+                    <option value="music">Music</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="religionmythology">Religion and Mythology</option>
+                    <option value="sportsleisure">Sport</option>
+                </select>
+                <button class="answer-btn" type="button"></button>
+                <button class="answer-btn" type="button"></button>
+                <button class="answer-btn" type="button"></button>
+                <button class="answer-btn" type="button"></button>
+                <button id="next-btn" type="button">Next</button>
+            </div>
+        </div>
+    </body>
 </html>

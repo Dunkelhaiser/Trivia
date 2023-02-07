@@ -16,6 +16,13 @@ html {
     background-color: $light-background;
 }
 
+body {
+    @include flex(column, center, center, center, 2rem, wrap);
+
+    width: 100vw;
+    height: 100vh;
+}
+
 input,
 button,
 textarea,

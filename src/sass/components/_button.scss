@@ -1,0 +1,57 @@
+button {
+    @include hover;
+
+    cursor: pointer;
+
+    width: 100%;
+    padding: 1.4em 1.07em;
+
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $light-foreground;
+
+    background-color: $light-blue;
+    border-color: $light-blue-dark;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.35em;
+    outline-color: $light-blue-dark;
+
+    &:hover {
+        background-color: $light-blue-light;
+    }
+
+    &:active {
+        background-color: $light-blue-dark;
+    }
+}
+
+.wrong {
+    cursor: default;
+    background-color: $light-wrong;
+    border-color: $light-wrong-dark;
+    outline-color: $light-wrong-dark;
+
+    &:hover {
+        background-color: $light-wrong;
+    }
+
+    &:active {
+        background-color: $light-wrong;
+    }
+}
+
+.success {
+    cursor: default;
+    background-color: $light-success;
+    border-color: $light-success-dark;
+    outline-color: $light-success-dark;
+
+    &:hover {
+        background-color: $light-success;
+    }
+
+    &:active {
+        background-color: $light-success;
+    }
+}
