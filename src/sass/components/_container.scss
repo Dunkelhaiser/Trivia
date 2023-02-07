@@ -1,6 +1,11 @@
 .container {
     @include flex(column, flex-start, flex-start, flex-start, 1rem, nowrap);
 
+    @include respond-phone {
+        width: 90vw;
+        margin: 0;
+    }
+
     width: 50vw;
     margin: 0 5rem;
     padding: 4rem;
