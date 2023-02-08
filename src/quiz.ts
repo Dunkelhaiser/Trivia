@@ -16,26 +16,21 @@ const quizContent = document.querySelector("#quiz-content") as HTMLDivElement;
 
 let correctAnswer: string;
 
-const fetchQuestion = async () => {
-    loader.classList.remove("hidden");
-    quizContent.classList.add("hidden");
+const initialFetch = async () => {
     const res = await fetch(`https://api.api-ninjas.com/v1/trivia?category=${categorySelect.value}`, {
         headers: { "X-Api-Key": "d6whB4xky+kWCD+nCuvX0Q==3Xatl3352PDwkG6C" },
     });
     const question: Question[] = await res.json();
+    return question;
+};
 
-    const fakeRes1 = await fetch(`https://api.api-ninjas.com/v1/trivia?category=${categorySelect.value}`, {
-        headers: { "X-Api-Key": "d6whB4xky+kWCD+nCuvX0Q==3Xatl3352PDwkG6C" },
-    });
-    const fakeQuestion1: Question[] = await fakeRes1.json();
-    const fakeRes2 = await fetch(`https://api.api-ninjas.com/v1/trivia?category=${categorySelect.value}`, {
-        headers: { "X-Api-Key": "d6whB4xky+kWCD+nCuvX0Q==3Xatl3352PDwkG6C" },
-    });
-    const fakeQuestion2: Question[] = await fakeRes2.json();
-    const fakeRes3 = await fetch(`https://api.api-ninjas.com/v1/trivia?category=${categorySelect.value}`, {
-        headers: { "X-Api-Key": "d6whB4xky+kWCD+nCuvX0Q==3Xatl3352PDwkG6C" },
-    });
-    const fakeQuestion3: Question[] = await fakeRes3.json();
+const fetchQuestion = async () => {
+    loader.classList.remove("hidden");
+    quizContent.classList.add("hidden");
+    const question: Question[] = await initialFetch();
+    const fakeQuestion1: Question[] = await initialFetch();
+    const fakeQuestion2: Question[] = await initialFetch();
+    const fakeQuestion3: Question[] = await initialFetch();
 
     if (question) {
         loader.classList.add("hidden");
